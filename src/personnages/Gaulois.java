@@ -1,4 +1,5 @@
 package personnages;
+import personnages.Romain;
 
 public class Gaulois {
 	private String nom;
@@ -23,12 +24,12 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		recevoirCoup(force/3);
+		romain.recevoirCoup(force/3);
 	}
 
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		return "Gaulois [nom=" + nom + ", force=" + force + "]";
 	}
 	
 	public static void main(String[] args) {
