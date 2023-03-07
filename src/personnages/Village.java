@@ -29,6 +29,13 @@ public class Village {
 		return villageois[numero_villageois];
 	}
 	
+	public void afficherVillageois() {
+		System.out.println("Dans " + nom + " du chef " + chef.getNom() + " vivent les légendaires gaulois : ");
+		for(int i = 0 ; i<nbVillageois ; i++ ) {
+			System.out.println("- " + villageois[i].getNom());
+		}
+	}
+	
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles", 30);
 		// Gaulois gaulois = village.trouverHabitant(30);
@@ -43,6 +50,10 @@ public class Village {
 		//Gaulois gaulois = village.trouverHabitant(1);
 		//System.out.println(gaulois);
 		//On a "null" en résultat car il ne se trouve rien à cette case, le gaulois se trouve dans le case 0
+		
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 		
 	}
 	
