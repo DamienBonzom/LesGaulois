@@ -45,8 +45,8 @@ public class Romain {
 			System.out.println("Le soldat " + this.getNom() + " s'équipe avec un " + equip.toString());
 			break;
 		case 1:
-			Equipement premier_equip = equipements[0];
-			if (premier_equip != equip) {
+			Equipement premierEquip = equipements[0];
+			if (premierEquip != equip) {
 				equipements[nbEquipement] = equip;
 				nbEquipement++;
 				System.out.println("Le soldat " + this.getNom() + " s'équipe avec un " + equip.toString());
