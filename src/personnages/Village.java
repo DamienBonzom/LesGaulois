@@ -25,4 +25,8 @@ public class Village {
 		nbVillageois += 1;
 	}
 	
+	public Gaulois trouverHabitant(int numero_villageois) {
+		return villageois[numero_villageois];
+	}
+	
 }
