@@ -19,4 +19,10 @@ public class Village {
 	public String getNom() {
 		return nom;
 	}
+	
+	public void ajouterHabitant(Gaulois personne) {
+		villageois[nbVillageois] = personne;
+		nbVillageois += 1;
+	}
+	
 }
