@@ -7,7 +7,8 @@ public class Village {
 	private int nbVillageois = 0;
 	private Gaulois[] villageois;
 	
-	public Village(String nom) {
+	public Village(String nom, int nbVillageoisMaximum) {
+		this.villageois = new Gaulois[nbVillageoisMaximum];
 		this.nom = nom;
 	}
 	
