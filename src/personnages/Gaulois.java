@@ -7,11 +7,12 @@ public class Gaulois {
 	private int force;
 	private int nbTrophees;
 	private int effetPotion = 1;
-	private Equipement[] trophees = new Equipement[100];
+	private Equipement[] trophees;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		this.trophees = new Equipement[100];
 	}
 	
 	public String getNom() {
@@ -51,13 +52,9 @@ public class Gaulois {
 	}
 	
 	public void faireUneDonnation(Musee musee) {
-		String texte;
-		if (nbTrophees == 0) {
-			texte = "Je n'ai aucun trophee à donner au musee !";
-		} else {
-			texte = "Je donne au musee tous mes trophees :\n";
-		}
+		String texte = "Je donne au musee tous mes trophees :\n";
 		for(int i = 0; i < nbTrophees; i++ ) {
+			System.out.println(nbTrophees);
 			Trophee trop = new Trophee(this, trophees[i]);
 			musee.donnerTrophees(this, trop);
 			texte += "- " + trop.getEquipement().toString() + "\n";

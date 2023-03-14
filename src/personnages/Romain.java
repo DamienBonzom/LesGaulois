@@ -54,9 +54,10 @@ public class Romain {
 		//  	equipementEjecte = ejecterEquipement(); 
 		//  	parler("J'abandonne..."); 
 		// }
+		equipementEjecte = ejecterEquipement();
 		if (force > 0) {
 			parler("Aïe");
-			equipementEjecte = ejecterEquipement();
+			
 		} else {
 			parler("J'abandonne...");
 		}
