@@ -17,6 +17,10 @@ public class Romain {
 		return nom;
 	}
 	
+	public int getForce() {
+		return force;
+	}
+	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
@@ -50,10 +54,10 @@ public class Romain {
 		//  	equipementEjecte = ejecterEquipement(); 
 		//  	parler("J'abandonne..."); 
 		// }
-		if (force == 0) {
+		if (force > 0) {
 			parler("Aïe");
-		} else {
 			equipementEjecte = ejecterEquipement();
+		} else {
 			parler("J'abandonne...");
 		}
 
@@ -71,7 +75,7 @@ public class Romain {
 			for (int i = 0; i < nbEquipement; i++) { 
 				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER))) { 
 					resistanceEquipement += 8; 
-				} else { 
+				} else if(equipements[i] != null) { 
 					System.out.println("Equipement casque"); 
 					resistanceEquipement += 5; 
 				}  
@@ -80,6 +84,9 @@ public class Romain {
 		} 
 		parler(texte); 
 		forceCoup -= resistanceEquipement;
+		if(forceCoup < 0) {
+			forceCoup = 0;
+		}
 		return forceCoup; 
 	}
 
@@ -90,7 +97,8 @@ public class Romain {
 		for (int i = 0; i < nbEquipement; i++) {
 			if (equipements[i] != null) { 
 				equipementEjecte[nbEquipementEjecte] = equipements[i]; 
-				nbEquipementEjecte++; equipements[i] = null; 
+				nbEquipementEjecte++; 
+				equipements[i] = null; 
 			} 
 		} 
 		return equipementEjecte; 
