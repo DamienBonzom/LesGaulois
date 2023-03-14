@@ -34,6 +34,9 @@ public class Scenario {
 		
 		Musee musee = new Musee();
 		asterix.faireUneDonnation(musee);
+		
+		String instructionOcaml = musee.extraireInstructionsCaml();
+		System.out.println(instructionOcaml);
 
 	}
 
